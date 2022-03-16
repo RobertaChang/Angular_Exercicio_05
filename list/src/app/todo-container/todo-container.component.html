@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <mat-card-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Add your new todo</mat-label>
+            <input 
+            type="text" 
+            matInput 
+            placeholder="task" #inpt
+                (keyup.enter)="add(inpt.value)">
+        </mat-form-field> <button mat-raised-button color="primary" (click)="add(inpt.value)">New</button>
+
+        <mat-list>
+            <mat-list-item *ngFor="let task of tasks">
+                <p #d>{{ task }}</p>
+                <button class="delete-btn" mat-raised-button color="primary" (click)="del(d.innerText)" (click)="emitirEvento()">Delete</button>
+            </mat-list-item>
+        </mat-list>
+        <ng-content></ng-content>
+    </mat-card-content>
+</div>

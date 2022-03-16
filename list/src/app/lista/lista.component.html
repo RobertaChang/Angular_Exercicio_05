@@ -1,0 +1,54 @@
+<!-- <mat-form-field appearance="fill">
+  <mat-label></mat-label>
+    <input 
+    matInput 
+    placeholder="Add your new todo" 
+    #inputTarefa
+    (keyup.enter)="add(inputTarefa.value); inputTarefa.value= ''"
+    >
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="add(inputTarefa.value); inputTarefa.value=''">Adicionar</button>
+
+<mat-list class="taref" *ngFor="let tarefa of listaTarefas">
+    <mat-list-item>
+    {{ tarefa.nome }} <button class="delete-btn" mat-raised-button color="primary" (click)="deletar(tarefa.id)">Deletar</button>
+</mat-list-item>
+  </mat-list> -->
+
+
+ <!--  <mat-form-field appearance="fill">
+      <mat-label>Add your new todo</mat-label>
+      <input
+      type="text"
+      matInput
+      placeholder="Tasks"
+      #inpt
+      (keyup.enter)="salvarNoLocalStorage(inpt.value)"
+      > 
+  </mat-form-field> 
+  <button mat-raised-button color="primary" (click)="salvarNoLocalStorage(inpt.value); inpt.value=''">Adicionar</button> -->
+
+
+
+
+  <!-- <div class="wrapper">  
+
+    <mat-form-field appearance="fill">
+        <mat-label>Digite algo</mat-label>
+        <input
+        type="text"
+        matInput
+        placeholder="Ficará salvo no local Storage"
+        #inpt
+        (keyup.enter)="salvarNoLocalStorage(inpt.value)"
+        > 
+    </mat-form-field> <button #inputTarefas mat-raised-button color="primary" (click)="salvarTarefas(inpt.value)">Adicionar</button>
+
+    <mat-list>
+    <mat-list-item *ngFor="let dado of dadoLocalStorage; let i = index">
+        <p>{{ dado }}</p> <button class="delete-btn" mat-raised-button color="primary" (click)="deletarDoLocalStorage(i)">Deletar</button>
+    </mat-list-item>
+    </mat-list>
+    
+     
+  </div> -->

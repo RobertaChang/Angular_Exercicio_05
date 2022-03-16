@@ -1,0 +1,29 @@
+<!-- <div class="app-card">
+  <h1>Todo App</h1>
+<app-lista></app-lista>
+<app-footer></app-footer>
+</div> -->
+
+<!-- 
+<div class="wrapper">
+  <h1>Todo App</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Add your new todo</mat-label>
+    <input
+    type="text"
+    matInput
+    placeholder="Tasks"
+    #inpt
+    (keyup.enter)="salvarNoLocalStorage(inpt.value)"
+    > 
+</mat-form-field> 
+<button mat-raised-button color="primary" (click)="salvarNoLocalStorage(inpt.value); inpt.value=''">Adicionar</button>
+<app-todo-container></app-todo-container>
+</div> -->
+
+<mat-card>
+<h1>Todo App</h1>
+<app-todo-container class="app" [tasks]="tasks" [add]="add" [del]="del" (btnClickEvent)="snackBar()">
+  <app-todo-btn-clear [tasks]="tasks" [clear]="clear"></app-todo-btn-clear>
+</app-todo-container>
+</mat-card>

@@ -1,0 +1,27 @@
+body {
+    background-color: green;
+}
+
+.app-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 20px;
+}
+
+button {
+    display: inline;
+}
+
+mat-card {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(101, 187, 187), rgb(167, 167, 218));
+    color: indigo;
+}
+
