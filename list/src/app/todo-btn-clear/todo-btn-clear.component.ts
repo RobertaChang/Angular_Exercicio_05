@@ -7,14 +7,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./todo-btn-clear.component.css']
 })
 export class TodoBtnClearComponent {
-  @Input() 
-  tasks: Array<string> = []
-
+  
   @Output()
   btnClickEvent2: EventEmitter<any> = new EventEmitter<any>()  
+
+  @Input() 
+  tasks: Array<string> = []
   
-  @Input() clear(): void {
+  @Input() 
+    clear(): void {
     this.tasks.splice(0, this.tasks.length)
+    this.save
   }
   
   emitirEvento(): void {
@@ -26,7 +29,7 @@ export class TodoBtnClearComponent {
   }
   
   load(): void {
-    if (localStorage.getItem('Infos') != null) {
+    if(localStorage.getItem('Infos') != null) {
       this.tasks = JSON.parse('' + localStorage.getItem('Infos'))
     }
   }

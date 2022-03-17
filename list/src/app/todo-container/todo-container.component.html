@@ -2,12 +2,10 @@
     <mat-card-content>
         <mat-form-field appearance="fill">
             <mat-label>Add your new todo</mat-label>
-            <input 
-            type="text" 
-            matInput 
-            placeholder="task" #inpt
-                (keyup.enter)="add(inpt.value)">
-        </mat-form-field> <button mat-raised-button color="primary" (click)="add(inpt.value)">New</button>
+            <input type="text" matInput placeholder="task" #inpt (keyup.enter)="add(inpt.value)">
+        </mat-form-field> 
+        
+        <button mat-raised-button color="primary" (click)="add(inpt.value)">New</button>
 
         <mat-list>
             <mat-list-item *ngFor="let task of tasks">

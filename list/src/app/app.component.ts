@@ -8,14 +8,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AppComponent {
   title = 'list';
-
-  tasks: Array<string> = []
-
+  
   constructor(
     private _snackBar: MatSnackBar
-  ) {}
+  ){
+  
+    this.load();
+  }
 
-  @ViewChild('inputTarefa')
+  tasks: Array<string> = []
+  
+  @ViewChild('inpt')
   ipt!: ElementRef
 
   @Output()
@@ -26,7 +29,7 @@ export class AppComponent {
   }
 
   add(valor: string): void {
-    this.tasks.push(valor)
+    this.tasks.push("" + valor)
     this.ipt.nativeElement.value = ''
     this.save()
   }
@@ -46,7 +49,7 @@ export class AppComponent {
   }
   
   load(): void {
-    if (localStorage.getItem('Infos') != null) {
+    if(localStorage.getItem('Infos') != null) {
       this.tasks = JSON.parse('' + localStorage.getItem('Infos'))
     }
   }
@@ -54,5 +57,5 @@ export class AppComponent {
   snackBar(): void {
     this._snackBar.open('Você deletou um item da sua lista', 'Fechar')
   }
-  
+
 }

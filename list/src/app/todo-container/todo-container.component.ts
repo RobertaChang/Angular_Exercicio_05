@@ -7,23 +7,26 @@ import { Component, Output, ViewChild, ElementRef, Input, EventEmitter} from '@a
 })
 export class TodoContainerComponent {
 
-  @ViewChild('inputTarefa')
+  @ViewChild('inpt')
   ipt!: ElementRef
   
-  @Input() tasks: Array<string> = []
+  @Input() 
+  tasks: Array<string> = []
 
   @Output()
   btnClickEvent: EventEmitter<any> = new EventEmitter<any>()
 
-  @Input() emitirEvento(): void {
+  @Input()
+  emitirEvento(): void {
     this.btnClickEvent.emit()
   }
 
   @Input() 
   add(valor: string): void {
-    this.tasks.push(valor)
+    this.tasks.push("" + valor)
     this.ipt.nativeElement.value = ''
-    }
+    this.save
+  }
   
   @Input() 
   del(valor: string): void {
@@ -35,7 +38,7 @@ export class TodoContainerComponent {
   }
   
   load(): void {
-    if (localStorage.getItem('Infos') != null) {
+    if(localStorage.getItem('Infos') != null) {
       this.tasks = JSON.parse('' + localStorage.getItem('Infos'))
     }
   }

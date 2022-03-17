@@ -23,7 +23,7 @@
 
 <mat-card>
 <h1>Todo App</h1>
-<app-todo-container class="app" [tasks]="tasks" [add]="add" [del]="del" (btnClickEvent)="snackBar()">
+<app-todo-container class="app" [tasks]="tasks" [add]="add" [del]="del" (btnClickEvent)="snackBar()" [emitirEvento]="emitirEvento">
   <app-todo-btn-clear [tasks]="tasks" [clear]="clear"></app-todo-btn-clear>
 </app-todo-container>
 </mat-card>
